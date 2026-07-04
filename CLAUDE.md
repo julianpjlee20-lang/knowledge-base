@@ -3,7 +3,7 @@ created: 2026-07-04
 updated: 2026-07-04
 type: resource
 status: reference
-tags: [PKM-System, claude-code, governance]
+tags: [PKM-System, claude-code, governance, knowledge-base]
 related: [AGENTS.md]
 ---
 
@@ -11,31 +11,22 @@ related: [AGENTS.md]
 
 # Claude Code Instructions
 
-This Obsidian vault follows strict PARA.
-The imported `AGENTS.md` rules are mandatory for all Claude Code work in this vault.
+This repository is Andy's formal `knowledge-base` Wiki and Obsidian human interface.
+The imported `AGENTS.md` rules are mandatory for all Claude Code work in this repo.
 
-## Cross-Agent Memory Source of Truth
+## Core Fallback Rules
 
-This repository is Andy's knowledge-base / Obsidian vault, not the durable memory repo.
-
-Before making durable assumptions about Andy, read:
-
-- `/opt/data/hermes-memory/AGENTS.md`
-- `/opt/data/hermes-memory/MEMORY.md`
-
-GitHub source of truth:
-
-- `https://github.com/julianpjlee20-lang/hermes-memory`
-
-When updating durable user preferences, identity, agent behavior, or environment facts, update and push the `hermes-memory` repo. Do not create a separate Claude-only memory inside this knowledge-base repo.
-
-## Core Non-Negotiables (redundant safety, in case the import fails)
-
-- Do not create new top-level folders.
-- Do not create `claude/`, `hermes/`, `codex/`, `01-People/`, or `04-Admin/`.
-- Allowed root folders only: `00-Inbox/`, `01-Projects/`, `02-Areas/`,
-  `03-Resources/`, `04-Archives/`.
+- Use strict PARA top-level folders only: `00-Inbox/`, `01-Projects/`, `02-Areas/`, `03-Resources/`, `04-Archives/`.
+- Do not create root folders such as `claude/`, `hermes/`, `codex/`, `People/`, `01-People/`, `Admin/`, or `04-Admin/`.
+- Do not delete, move, or rename Dropbox originals.
+- Keep raw company files in Dropbox; create Markdown summaries with source links here.
+- Put AI behavior memory and durable user preferences in `hermes-memory`, not this repo.
 - If unsure where a note belongs, put it in `00-Inbox/` with `status: needs-triage`.
-- After creating or moving notes, update the nearest relevant `README.md` or index.
+- Update the relevant index/README when adding important pages.
 
-Full rules and detailed governance live in `AGENTS.md` and `03-Resources/PKM-System/`.
+## Memory Repo
+
+For durable cross-agent preferences and behavior rules, use:
+
+- GitHub: `https://github.com/julianpjlee20-lang/hermes-memory`
+- Local Windows path: `C:/Users/user/hermes-memory`

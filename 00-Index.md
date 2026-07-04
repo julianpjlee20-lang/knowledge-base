@@ -3,40 +3,50 @@ created: 2026-07-04
 updated: 2026-07-04
 type: resource
 status: reference
-tags: [PKM-System, index, PARA]
-related: [AGENTS.md, CLAUDE.md]
+tags: [PKM-System, index, PARA, knowledge-base]
+related: [AGENTS.md, CLAUDE.md, README.md]
+source: []
 ---
 
-# 00-Index — Vault 入口
+# Knowledge Base Index
 
-本 vault 遵循 **strict PARA**。規則單一真相來源:[[AGENTS.md]](Claude Code 由 root 自動載入)。
+本 vault / repo 遵循 **strict PARA**。規則單一真相來源：[[AGENTS]]。
+Claude Code 由 root [[CLAUDE]] import `AGENTS.md`。
+
+## Start Here
+
+- [[README]] — repo 入口
+- [[AGENTS]] — AI agents 的硬規則與 source-of-truth 邊界
+- [[CLAUDE]] — Claude Code 專用入口
+- [[03-Resources/PKM-System/AI Knowledge Architecture]] — 整體知識架構
+- [[03-Resources/PKM-System/Source Linking Rules]] — Dropbox / source link 規則
+- [[03-Resources/PKM-System/Dropbox Processing Workflow]] — Dropbox 文件轉 Wiki 流程
 
 ## 資料夾結構
 
 | 資料夾 | 用途 |
 |---|---|
-| `00-Inbox/` | 未分類、未處理的原始捕捉。不確定就先丟這裡並標 `status: needs-triage`。 |
-| `01-Projects/` | 有明確產出、期限或交付物的進行中工作。 |
-| `02-Areas/` | 無結束日期的持續責任(行政、提醒、維運）。 |
-| `03-Resources/` | 可重用的知識、參考、方法、工具、範例。含 `PKM-System/`(vault 治理)。 |
-| `04-Archives/` | 已完成、過期、歷史材料。含 `Agent Logs/`(agent 日誌、graphify 輸出）。 |
+| `00-Inbox/` | 未分類、未處理、AI draft、Dropbox processing queue |
+| `01-Projects/` | 有明確產出、期限或交付物的進行中工作 |
+| `02-Areas/` | 無結束日期的持續責任：公司營運、財務、法律、採購等 |
+| `03-Resources/` | 可重用知識、參考、方法、工具、廠商、SOP、PKM 系統文件 |
+| `04-Archives/` | 已完成、過期、歷史材料 |
 
-## 治理文件
+## Processing
 
-- vault root `AGENTS.md` — 核心規則(PARA-CORE v1）
-- vault root `CLAUDE.md` — Claude Code 指令(import AGENTS.md + 冗餘禁令)
-- `03-Resources/PKM-System/` — 完整方案、外部評估、後續 validator/hook 規劃
+- [[00-Inbox/Dropbox Processing Queue]]
+- [[00-Inbox/Duplicate Report]]
 
-## 各區索引
+## Folder Indexes
 
-- `01-Projects/README.md`
-- `02-Areas/README.md`
-- `03-Resources/README.md`
-- `04-Archives/README.md`
+- [[01-Projects/README]]
+- [[02-Areas/README]]
+- [[03-Resources/README]]
+- [[04-Archives/README]]
+
+## Existing Imported Content
 
 <!-- HERMES-IMPORT-2026-07-04 -->
-## Hermes 匯入內容（2026-07-04）
-
 - `01-Projects/Uphouse-Local-SEO/` — 向上建設官網 Local SEO 改版計畫
 - `01-Projects/2026-06-27_2026-07-02_japan-trip/` — 2026 日本旅行行程、住宿、購物、健身與剪髮研究
 - `03-Resources/SEO/ahrefs-seo-tool-guide-2026.md` — Ahrefs 2026 SEO 工具指南

@@ -8,8 +8,12 @@ Thumbs.db
 graphify-out/
 04-Archives/Agent Logs/graphify-out/
 
-# Inbox is private / unprocessed by default
-00-Inbox/
+# Inbox is private / unprocessed by default.
+# Keep the folder index and processing governance files tracked.
+00-Inbox/*
+!00-Inbox/README.md
+!00-Inbox/Dropbox Processing Queue.md
+!00-Inbox/Duplicate Report.md
 
 # Sensitive local connection artifacts (moved from 04-Admin to 02-Areas)
 02-Areas/*WhatsApp_QR_Code.txt

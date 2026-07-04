@@ -3,32 +3,33 @@ created: 2026-07-04
 updated: 2026-07-04
 type: resource
 status: reference
-tags: [PKM-System, agents, governance, PARA]
-related: [CLAUDE.md]
+tags: [PKM-System, agents, governance, PARA, knowledge-base]
+related: [CLAUDE.md, 00-Index.md, README.md]
 ---
 
-# Agent Rules for This Obsidian Vault
+# AGENTS.md — knowledge-base
 
-## Cross-Agent Memory Source of Truth
+## Role
 
-This repository is Andy's knowledge-base / Obsidian vault. It is **not** the durable cross-agent memory repo.
+This repository is Andy's formal Wiki / `knowledge-base` and the AI knowledge source of truth.
+It is also opened by Obsidian as the human reading and editing interface.
 
-Durable user preferences, identity, agent behavior rules, and environment facts must sync with the GitHub-backed memory repo:
+This repo stores **what Andy knows**: Markdown knowledge pages, SOPs, indexes, summaries, project/area/resource/archive notes, and source links.
+It is **not** the durable cross-agent memory repo.
 
-- GitHub: `https://github.com/julianpjlee20-lang/hermes-memory`
-- Local path: `/opt/data/hermes-memory`
-- Operating rules: `/opt/data/hermes-memory/AGENTS.md`
-- Durable memory: `/opt/data/hermes-memory/MEMORY.md`
+## Source-of-Truth Boundaries
 
-Before making durable assumptions about Andy, read the memory repo's `AGENTS.md` and `MEMORY.md`.
+| Information type | Source of truth |
+|---|---|
+| Company raw/original files | Dropbox for Work / `C:/Users/user/Dropbox` |
+| Human reading/editing interface | Obsidian on OneDrive Personal: `C:/Users/user/OneDrive/SecondBrain-Onedrive` |
+| Formal Wiki / AI knowledge | GitHub `knowledge-base`: `https://github.com/julianpjlee20-lang/knowledge-base.git` |
+| AI behavior memory and user preferences | GitHub `hermes-memory`: `https://github.com/julianpjlee20-lang/hermes-memory.git` |
+| Code projects | Their own GitHub repos + repo-local `AGENTS.md` |
 
-When updating durable user/agent/identity preferences, update the memory repo and push it to GitHub. Do not create a separate private memory inside this knowledge-base repo.
+## PARA-CORE v2
 
-## PARA-CORE v1
-
-This vault follows strict PARA.
-
-### Allowed root folders only
+### Allowed top-level folders only
 
 - `00-Inbox/`
 - `01-Projects/`
@@ -50,27 +51,40 @@ Do not create any other top-level folders.
 - `Admin/`
 - `04-Admin/`
 
-## Classification
+## What Belongs Here
 
-Before creating or moving any note, classify it:
+- Long-term Wiki pages
+- Company/business knowledge summaries
+- SOPs and workflows meant for humans and AI to read
+- Project, area, resource, and archive notes
+- Indexes and maps of content
+- Markdown summaries of raw files with stable source links
 
-- `01-Projects/`: active work with a clear outcome, deadline, or deliverable.
-- `02-Areas/`: ongoing responsibility with no end date.
-- `03-Resources/`: reusable knowledge, references, methods, tools, examples.
-- `04-Archives/`: inactive, completed, outdated, or historical material.
-- `00-Inbox/`: unclear or unprocessed capture only.
+## What Does Not Belong Here
 
-If uncertain, use `00-Inbox/` and set `status: needs-triage`.
+- AI behavior memory or durable user preferences → put in `hermes-memory`
+- Bulk raw PDFs / Excel / scans → keep in Dropbox and link sources
+- Agent-private long-term memory → use `hermes-memory`
+- Short-lived task logs, PR numbers, issue status, commit logs → do not store as durable Wiki unless intentionally archived
 
-## Agent Content
+## Dropbox / Original File Rules
 
-- Agent resources go under `03-Resources/AI Agents/`.
-- Agent logs go under `04-Archives/Agent Logs/`.
-- Vault rules and PKM system docs go under `03-Resources/PKM-System/`.
+- Dropbox for Work / `C:/Users/user/Dropbox` is the raw company file layer.
+- Agents may read Dropbox only when original evidence is needed.
+- Do **not** delete, move, rename, or reorganize Dropbox originals without explicit approval.
+- Prefer creating Markdown summaries in this repo with source paths.
+- If duplicates are found, create/update `00-Inbox/Duplicate Report.md` first; do not clean originals automatically.
 
-## Required Frontmatter
+## Obsidian / OneDrive Rules
 
-New markdown notes should include:
+- Obsidian is the human interface, not a separate AI source of truth.
+- This local vault is a Git working copy of `knowledge-base`.
+- AI changes should be made in this repo, validated, then committed/pushed when appropriate.
+- Do not create a separate OneDrive-only knowledge structure outside this repo.
+
+## Note Standard
+
+New Markdown knowledge notes should include:
 
 ```yaml
 ---
@@ -80,35 +94,56 @@ type: project | area | resource | archive | inbox | log
 status: active | draft | reference | archived | needs-triage
 tags: []
 related: []
+source: []
 ---
 ```
 
-Note: governance files such as `AGENTS.md` and `CLAUDE.md` themselves use
-`type: resource` so they do not trip the validator.
+Recommended body:
+
+```md
+# Title
+
+## 摘要
+
+## 重點
+
+## 判斷 / 結論
+
+## 原始資料來源
+
+## 相關頁面
+```
+
+## Classification
+
+- `00-Inbox/`: unclear, unprocessed, AI drafts, processing queues.
+- `01-Projects/`: active work with a clear outcome, deadline, or deliverable.
+- `02-Areas/`: ongoing responsibility with no end date.
+- `03-Resources/`: reusable knowledge, references, SOPs, vendors, tools, concepts.
+- `04-Archives/`: inactive, completed, outdated, or historical material.
+
+If uncertain, use `00-Inbox/` and set `status: needs-triage`.
 
 ## Indexing
 
-After creating or moving notes, update the nearest relevant `README.md` or index.
+After creating or moving important notes, update at least one relevant index:
 
-Required indexes:
-
-- `00-Index.md`
-- `01-Projects/README.md`
-- `02-Areas/README.md`
-- `03-Resources/README.md`
-- `04-Archives/README.md`
+- root `index.md` when present, or root `00-Index.md` for Obsidian navigation
+- folder `README.md`
+- a relevant MOC / map-of-content note
 
 ## Validation
 
-Before finishing, run the vault validator if available:
+Before finishing structural work, run:
 
 ```bash
 python 03-Resources/PKM-System/scripts/validate-vault.py
 ```
 
-If the validator does not exist yet, state clearly that validation was skipped.
+If the validator cannot run, state clearly why validation was skipped.
 
-## Full Reference
+## Related Governance Docs
 
-Detailed rules, examples, templates, and migration plans belong under:
-`03-Resources/PKM-System/`
+- `03-Resources/PKM-System/AI Knowledge Architecture.md`
+- `03-Resources/PKM-System/Source Linking Rules.md`
+- `03-Resources/PKM-System/Dropbox Processing Workflow.md`

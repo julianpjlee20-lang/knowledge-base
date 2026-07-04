@@ -1,10 +1,11 @@
 ---
 created: 2026-07-04
 updated: 2026-07-04
-type: inbox
-status: draft
+type: resource
+status: reference
 tags: [PARA, Obsidian, agents, second-brain, governance]
-related: []
+related: [AGENTS.md, CLAUDE.md, AI Knowledge Architecture]
+source: []
 ---
 
 # PARA Agent Governance Evaluation Brief
