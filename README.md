@@ -28,7 +28,7 @@ It is opened in Obsidian for human reading/editing and synchronized through GitH
 Dropbox = original company files
 OneDrive / Obsidian = human interface
 GitHub knowledge-base = formal Wiki / AI knowledge source
-GitHub hermes-memory = AI behavior memory and user preferences
+GitHub agents-memory = AI behavior memory and user preferences
 ```
 
 ## PARA Structure
