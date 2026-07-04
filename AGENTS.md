@@ -24,7 +24,7 @@ It is **not** the durable cross-agent memory repo.
 | Company raw/original files | Dropbox for Work / `C:/Users/user/Dropbox` |
 | Human reading/editing interface | Obsidian on OneDrive Personal: `C:/Users/user/OneDrive/SecondBrain-Onedrive` |
 | Formal Wiki / AI knowledge | GitHub `knowledge-base`: `https://github.com/julianpjlee20-lang/knowledge-base.git` |
-| AI behavior memory and user preferences | GitHub `hermes-memory`: `https://github.com/julianpjlee20-lang/hermes-memory.git` |
+| AI behavior memory and user preferences | GitHub `agents-memory`: `https://github.com/julianpjlee20-lang/agents-memory.git` |
 | Code projects | Their own GitHub repos + repo-local `AGENTS.md` |
 
 ## PARA-CORE v2
@@ -62,9 +62,9 @@ Do not create any other top-level folders.
 
 ## What Does Not Belong Here
 
-- AI behavior memory or durable user preferences → put in `hermes-memory`
+- AI behavior memory or durable user preferences → put in `agents-memory`
 - Bulk raw PDFs / Excel / scans → keep in Dropbox and link sources
-- Agent-private long-term memory → use `hermes-memory`
+- Agent-private long-term memory → use `agents-memory`
 - Short-lived task logs, PR numbers, issue status, commit logs → do not store as durable Wiki unless intentionally archived
 
 ## Dropbox / Original File Rules
