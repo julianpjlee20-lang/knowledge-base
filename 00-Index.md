@@ -33,3 +33,14 @@ related: [AGENTS.md, CLAUDE.md]
 - `02-Areas/README.md`
 - `03-Resources/README.md`
 - `04-Archives/README.md`
+
+<!-- HERMES-IMPORT-2026-07-04 -->
+## Hermes 匯入內容（2026-07-04）
+
+- `01-Projects/Uphouse-Local-SEO/` — 向上建設官網 Local SEO 改版計畫
+- `01-Projects/2026-06-27_2026-07-02_japan-trip/` — 2026 日本旅行行程、住宿、購物、健身與剪髮研究
+- `03-Resources/SEO/ahrefs-seo-tool-guide-2026.md` — Ahrefs 2026 SEO 工具指南
+- `03-Resources/Creator-Economy/dankoe-creator-economy.md` — Dan Koe 多重興趣與創作者經濟筆記
+- `03-Resources/讀書筆記/高效經理人手冊.md` — 高效經理人手冊讀書筆記
+- `03-Resources/讀書筆記/我們的美元，你們的問題.md` — 美元霸權與貨幣金融筆記
+- `04-Archives/Legacy-Hermes-Wiki/` — 舊版 Hermes Wiki 的 index/log/schema 備份

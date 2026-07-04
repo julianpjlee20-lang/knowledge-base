@@ -20,3 +20,8 @@ related: [00-Index.md]
   - `claude/` — 舊 `claude/` 知識庫(index、weekly concepts、daily-logs)
   - `graphify-out/` — graphify 快取輸出(`.gitignore` 排除)
 - `_legacy-01-People/` — 舊 `01-People/` 空殼(僅系統 README,保留待清）
+
+<!-- HERMES-IMPORT-2026-07-04 -->
+## Hermes 匯入封存（2026-07-04）
+
+- `Legacy-Hermes-Wiki/` — 舊版 `/opt/data/wiki` 的 `index.md`、`log.md`、`SCHEMA.md`，保留作為遷移紀錄。

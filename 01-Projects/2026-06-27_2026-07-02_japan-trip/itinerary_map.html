@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026/6/27–7/2 日本旅行｜行程總地圖</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:#222; }
+    #map { height:100vh; width:100vw; }
+    .panel { position:absolute; z-index:1000; top:12px; left:12px; max-width:390px; background:#fff; border-radius:14px; padding:14px 16px; box-shadow:0 4px 18px rgba(0,0,0,.22); font-size:14px; line-height:1.45; }
+    .panel h1 { font-size:17px; margin:0 0 8px; }
+    .panel .muted { color:#666; font-size:12px; margin-top:8px; }
+    .legend { margin-top:8px; display:grid; gap:4px; }
+    .dot { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:6px; }
+    .filters { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+    .filters button { border:1px solid #ddd; background:#f8f8f8; border-radius:999px; padding:5px 9px; cursor:pointer; font-size:12px; }
+    .filters button.active { background:#222; color:#fff; border-color:#222; }
+    .popup h3 { margin:0 0 4px; font-size:15px; }
+    .popup p { margin:4px 0; }
+    .popup a { display:inline-block; margin-top:4px; }
+    .tag { display:inline-block; border-radius:999px; padding:2px 7px; background:#eee; font-size:12px; margin:2px 4px 2px 0; }
+    .warn { color:#b45309; font-weight:600; }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <h1>日本旅行行程總地圖</h1>
+    <div>用途：之後所有住宿、想逛店家、餐廳、景點、已確認預約都放到這張圖；目前已放入 6/28–7/2 團體行程飯店、購物/健身候選與 6/27 梅田剪髮預約。住宿基準已更正：6/27 為 TONES（靠近梅田，正式地址待補）、6/30–7/1 為 RITA HOTEL NAMBA；舊大阪皇家經典飯店距離不再作為住宿附近依據。</div>
+    <div class="legend">
+      <div><span class="dot" style="background:#d62728"></span>住宿 / 起點</div>
+      <div><span class="dot" style="background:#1f77b4"></span>購物 / 店家</div>
+      <div><span class="dot" style="background:#2ca02c"></span>餐廳 / 咖啡</div>
+      <div><span class="dot" style="background:#9467bd"></span>景點</div>
+      <div><span class="dot" style="background:#17becf"></span>健身房</div>
+      <div><span class="dot" style="background:#ff7f0e"></span>待確認 / 時間風險</div>
+    </div>
+    <div class="filters">
+      <button class="active" data-filter="all">全部</button>
+      <button data-filter="hotel">住宿</button>
+      <button data-filter="shopping">購物</button>
+      <button data-filter="food">餐廳咖啡</button>
+      <button data-filter="sight">景點</button>
+      <button data-filter="gym">健身房</button>
+      <button data-filter="needs_check">待確認</button>
+    </div>
+    <div class="muted">規則：加入行程前必查營業時間 / 公休日 / 最後入店。未確認者標成橘色，不可直接排固定時間。</div>
+  </div>
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const origin = {name:'RITA HOTEL NAMBA（6/30–7/1 基準）', lat:34.651546, lon:135.494003};
+    const places = [
+      {id:'hotel-royal-classic-osaka', type:'hotel', status:'excluded', date:'舊基準', name:'大阪皇家經典飯店 / Hotel Royal Classic Osaka', brands:'舊住宿基準；已由使用者更正，不作為 6/27 或 6/30–7/1 住宿附近距離依據', lat:34.6659119, lon:135.4998754, walk:'舊資料保留作對照；不要用來估新行程飯店附近', addr:'難波四丁目, 中央区, 大阪市', hours:'不適用', source:'OSM/Nominatim geocode / user correction 2026-06-22'},
+      {id:'hop-inn-kyoto-shijo-omiya-20260628', type:'hotel', status:'confirmed', date:'2026-06-28、2026-06-29 住宿', name:'京都四條大宮霍普旅館 / HOP INN Kyoto Shijo Omiya', brands:'旅行社 PDF 指定住宿；連住 2 晚', lat:35.0046, lon:135.7477, walk:'京都住宿；地址座標為近似點，出發前需以 Google Maps / 旅行社最終通知確認', addr:'京都府京都市中京区壬生坊城町14-2；電話 075-813-1101', hours:'入住/退房時間待旅行社或飯店確認', source:'0628_VZ泰越捷_大阪豪華五日.pdf；座標依地址近似'},
+      {id:'rita-hotel-namba-20260630', type:'hotel', status:'confirmed', date:'2026-06-30、2026-07-01 住宿', name:'RITA HOTEL NAMBA', brands:'旅行社 PDF 指定大阪住宿；連住 2 晚。6/30–7/1 的大阪行程與飯店附近店家以此為基準。', lat:34.651546, lon:135.494003, walk:'大阪住宿；座標已用日本國土地理院地址搜尋重查', addr:'大阪市西成区中開1-3-12；電話 06-6635-0092', hours:'入住/退房時間待旅行社或飯店確認', source:'0628_VZ泰越捷_大阪豪華五日.pdf；GSI address search 2026-06-22'},
+      {id:'umeda-station-base', type:'hotel', status:'needs_check', date:'6/27 TONES 暫用基準', name:'梅田站 / Umeda Station', brands:'6/27 使用者更正住 TONES 靠近梅田；正式飯店全名/地址待補前，暫以梅田站區域規劃', lat:34.7034131, lon:135.4975879, walk:'暫用基準點；非住宿；待 TONES 地址後精算', addr:'梅田, 北区, 大阪市', hours:'交通節點', source:'OSM/Nominatim geocode / user correction 2026-06-22'},
+      {id:'hotel-hankyu-respire-osaka-candidate', type:'hotel', status:'selected', date:'2026-06-27候選', name:'Hotel Hankyu RESPIRE Osaka', brands:'梅田住宿候選首選：距梅田站約0.19km；Trip.com 摘要列 24h gym；位置最佳', lat:34.7045871, lon:135.4960115, walk:'從梅田站直線約0.19km；官方：JR大阪站步行約3分、梅田站步行約5分', addr:'大阪府大阪市北区大深町1番1号', hours:'住宿候選；實際入住/兒童/價格需下訂前確認', source:'官方頁 / Trip.com 搜尋摘要 / OSM'},
+      {id:'hotel-intergate-osaka-umeda-candidate', type:'hotel', status:'selected', date:'2026-06-27候選', name:'Hotel Intergate Osaka Umeda', brands:'梅田住宿候選：4-star、Trip.com 9.2/10；有 24-hour fitness center＋大浴場', lat:34.6983444, lon:135.4932396, walk:'從梅田站直線約0.69km；JR大阪站桜橋口步行圈', addr:'大阪市北区梅田2丁目5-2', hours:'住宿候選；Klook/Jalan 參考約NT$3,312～TWD4,992，實際含稅需再查', source:'Trip.com detail / Klook台灣摘要 / Jalan摘要 / 官方頁 / OSM'},
+      {id:'hotel-monterey-le-frere-osaka-candidate', type:'hotel', status:'confirmed', date:'2026-06-27候選', name:'Hotel Monterey Le Frere Osaka', brands:'梅田住宿候選：Trip.com 9.1/10；6/27 2大1小 Total US$126 約TWD3,900；有溫浴/桑拿，未見健身房', lat:34.6978809, lon:135.4995431, walk:'從梅田站直線約0.64km；官方：JR大阪站約步行5分、梅田站約步行10分', addr:'大阪市北区曽根崎新地1丁目12番8号', hours:'住宿候選；Run of House 床型需下訂前確認', source:'Trip.com 6/27 搜尋結果 / 官方頁 / OSM'},
+      {id:'villa-fontaine-grand-osaka-umeda-candidate', type:'hotel', status:'confirmed', date:'2026-06-27候選', name:'Villa Fontaine Grand Osaka Umeda', brands:'梅田住宿候選：4星、Trip.com 9.4/10；有SPA/大浴場/岩盤浴；健身房未確認', lat:34.7012751, lon:135.5013531, walk:'從梅田站直線約0.42km；官方：Osaka Metro 梅田站步行3分', addr:'大阪府大阪市北区曽根崎2-15-9', hours:'住宿候選；價格可能低於TWD4000，實際兒童/含稅需再查', source:'Trip.com detail SEO / 官方頁 / OSM'},
+
+      {id:'on-sneakers-by-emmi-takashimaya', type:'shopping', status:'excluded', date:'不排', name:'SNEAKERS by emmi 大阪タカシマヤ店', brands:'排除：On 官方 dealer 但屬婦人靴 / 女鞋場域，不符合男鞋需求', lat:34.664757, lon:135.500797, walk:'飯店步行約 2–3 分；On 官方距離 0.15 km', addr:'大阪市中央区難波5-1-5 大阪高島屋 2F 婦人靴売場', hours:'10:00–20:00（emmi 官方店鋪頁）', source:'On 官方 dealer locator / emmi 官方店鋪頁'},
+      {id:'downbeat-running-osaka', type:'shopping', status:'confirmed', date:'未定', name:'Downbeat RUNNING OSAKA', brands:'優先：On 官方 dealer；On シューズ&アパレル；跑步店取向，非女鞋專櫃，適合男鞋優先詢問 / 優先：On正規取扱店。メンズシューズ目的。', buy:'買什麼：On 男鞋 / メンズシューズ。到店先問 Cloud 6、Cloudmonster、Cloudsurfer、Cloudrunner 2 是否有男款與尺寸。日文：Onのメンズシューズを探しています。Cloud 6、Cloudmonster、Cloudsurfer、Cloudrunner 2のメンズサイズはありますか？', lat:34.668966, lon:135.501293, walk:'從 RITA HOTEL NAMBA 路線約 2.89 km / 36 分；On 官方舊距離 0.36 km 為舊難波基準，不再作為住宿附近距離', addr:'大阪市中央区道頓堀1-9-5', hours:'營業時間未在可抓取官方頁確認；排入前需查 Google Maps / IG / 電話', source:'On 官方 dealer locator / On 官方 dealer detail'},
+      {id:'sports-depo-namba-parks-on', type:'shopping', status:'confirmed', date:'未定', name:'Sports DEPO Namba Parks', brands:'備選：On 官方 dealer；On シューズ&アパレル；大型運動用品店，男鞋備選 / 予備：大型スポーツ用品店。メンズOn候補。', buy:'買什麼：Downbeat 沒貨時找 On 男鞋 / メンズシューズ；優先問 Cloud 6、Cloudmonster、Cloudsurfer、Cloudrunner 2。日文：Onのメンズシューズはどこにありますか？', lat:34.661433, lon:135.50192, walk:'從 RITA HOTEL NAMBA 路線約 2.35 km / 29 分；On 官方舊距離 0.53 km 為舊難波基準，不再作為住宿附近距離', addr:'大阪市浪速区難波中2-10-70 なんばパークス4階', hours:'營業時間需以なんばパークス / Google Maps 確認', source:'On 官方 dealer locator / On 官方 dealer detail'},
+      {id:'journal-standard-namba', type:'shopping', status:'confirmed', date:'未定', name:'JOURNAL STANDARD 難波店 / なんばCITY', brands:'JOURNAL STANDARD / Baycrews 系日系休閒選品；男女裝。On 官方 dealer 搜尋也出現，可順路看 On，但不是跑鞋專門店。', buy:'買什麼：JOURNAL STANDARD 男裝、denim、褲裝、outer、襯衫；順路可問 On 男鞋。日文：メンズのJOURNAL STANDARDを見たいです。Onのシューズの取り扱いはありますか？メンズサイズはありますか？', lat:34.6639037, lon:135.5015067, walk:'舊難波基準步行約 5–7 分；RITA 出發需重新看交通，可和 SHOLAYERED なんば店、なんばCITY / なんばパークス一起排', addr:'大阪府大阪市中央区難波5-1-60 なんばCITY 本館 B1F', hours:'11:00–21:00（なんばCITY / BAYCREW’S STORE 店鋪資訊）', source:'なんばCITY shop detail / BAYCREW’S STORE 店舗詳細 / On dealer 搜尋結果'},
+
+      {id:'hair-caribclub-namba', type:'shopping', status:'confirmed', date:'未定', name:'barber shop 刈部倶楽舞 難波店', brands:'男生剪髮首選：男士barber；HOT PEPPER 4.84/157；剪＋洗 ¥4,000～¥4,400；可線上訂位與指定設計師 / メンズカット・シャンプー', buy:'做什麼：剪＋洗，俐落乾淨男生髮型。日文：カットとシャンプーだけで、清潔感のあるすっきりしたメンズスタイルにしたいです。', lat:34.66639002423039, lon:135.50002310921002, walk:'飯店步行約 2 分；直線約 0.05 km', addr:'大阪市中央区難波4丁目2-3 御堂筋光明ビル6F', hours:'需依 HOT PEPPER 訂位頁確認空席', source:'HOT PEPPER Beauty slnH000782271'},
+      {id:'hair-fcode-namba', type:'shopping', status:'selected', date:'未定', name:'メンズサロンF-CODE 難波', brands:'已先記錄：男生剪髮首選；HOT PEPPER 4.84/64；MEN’Sカット＋炭酸クレンジング ¥3,900；可指名 / メンズ専門', buy:'做什麼：剪＋炭酸クレンジング，俐落男生短髮。選【人気クーポン/指名可能】MEN’Sカット＋炭酸クレンジング，不選「担当指定不可」。日文：メンズカットと炭酸クレンジングで、清潔感のあるすっきりした髪型にしたいです。', lat:34.6673863, lon:135.5017542, walk:'飯店步行約 3 分；直線約 0.24 km', addr:'大阪市中央区難波1-4-6 ミフネ難波ビル5F', hours:'需依 HOT PEPPER 訂位頁確認空席', source:'HOT PEPPER Beauty slnH000795078'},
+      {id:'reservation-clomus-umeda-20260627', type:'shopping', status:'confirmed', date:'2026-06-27 17:00–18:00 已預約', name:"Men's salon clomus 梅田茶屋町店｜鈴木茜", brands:'已確認 HOT PEPPER 即時予約：予約番号 BF16962505；メンズカット+眉毛カット+炭酸パック；合計 ¥5,300（現地支払い）', buy:'做什麼：17:00 到店剪髮；スタイリスト 鈴木茜。電話 06-6131-4163。取消期限 2026-06-26 23:59；無断キャンセル：合計金額100%。', lat:34.706322, lon:135.4996921, walk:'從梅田站步行圈；Google Maps 座標 34.706322,135.4996921。從難波住宿不建議步行，建議搭御堂筋線なんば→梅田後步行。', addr:'大阪市北区茶屋町周邊（HOT PEPPER 地圖座標 34.706322,135.4996921）', hours:'予約済：2026-06-27 17:00；施術時間目安 1時間', source:'HOT PEPPER Beauty 予約確定メール / reserveId BF16962505'},
+      {id:'hair-hiroginza-namba', type:'shopping', status:'needs_check', date:'未定', name:'HIRO GINZA BARBER SHOP 難波店', brands:'男生剪髮備選：高評價barber；HOT PEPPER 4.96/67；當日新規カット×爽快シャンプー ¥3,960，但 coupon 條件需確認 / メンズ理容室', buy:'做什麼：剪＋爽快シャンプー，商務可用俐落短髮。日文：カットと爽快シャンプーだけで、ビジネスでも使えるすっきりした短めのスタイルにしたいです。', lat:34.6637295, lon:135.5009267, walk:'飯店步行約 3 分；直線約 0.26 km', addr:'大阪市中央区難波5-1-60 なんばスカイオ6F', hours:'需依 HOT PEPPER 訂位頁確認空席與 ¥3,960 coupon 是否可用', source:'HOT PEPPER Beauty slnH000762533'},
+      {id:'hair-ciel-namba', type:'shopping', status:'confirmed', date:'未定', name:'CIEL 難波店', brands:'剪髮備選：一般salon；HOT PEPPER 4.76/836；似合わせカット（シャンプー込み）¥3,500；可線上訂位 / カット・シャンプー', buy:'做什麼：剪＋洗，清爽俐落男生髮型。日文：清潔感のあるすっきりしたメンズカットにしたいです。シャンプー込みのカットでお願いします。', lat:34.666695, lon:135.5000235, walk:'飯店步行約 2 分；直線約 0.09 km', addr:'大阪市中央区難波4-1-2 三信ビル4F', hours:'需依 HOT PEPPER 訂位頁確認空席', source:'HOT PEPPER Beauty slnH000354093'},
+
+
+
+      {id:'lyft-osaka-store', type:'shopping', status:'confirmed', date:'2026-06-28', name:'LÝFT Osaka Store / リフト 大阪 南堀江店', brands:'日本高級健身服飾首選；gym wear / athleisure；比一般運動品牌更健身人取向', buy:'買什麼：T-shirt、tank、短褲、oversized pump cover、訓練用但可日常穿單品。', lat:34.6724226, lon:135.4940035, walk:'從 RITA HOTEL NAMBA 路線約 3.02 km / 38 分；不再算飯店附近，可和 CRONOS 大阪堀江店排同一段堀江路線', addr:'大阪府大阪市西区南堀江1-21-16', hours:'月–日 12:00–20:00（LÝFT 官方 Osaka Store 頁）', source:'LÝFT 官方 Osaka Store 頁 / 官方 Google Maps embed'},
+      {id:'cronos-osaka-horie', type:'shopping', status:'confirmed', date:'2026-06-28', name:'CRONOS 大阪堀江店', brands:'日本高級健身 / athleisure；6/28 住宿附近優先店；版型俐落，gym-to-street', buy:'買什麼：CRONOS 男裝訓練服、T-shirt、短褲、訓練長褲、乾淨俐落的日常運動風單品。', lat:34.674331172928994, lon:135.4925553763589, walk:'從 RITA HOTEL NAMBA 路線約 2.92 km / 37 分；四橋站4號出口步行約3分（官方頁）', addr:'大阪府大阪市西区北堀江1-17-1 COR2', hours:'通常 11:00–20:00（CRONOS 官方店鋪頁；出發前需再查臨時店休）', source:'CRONOS 官方 shoplist / CRONOS 大阪店頁 / 官方 Google Maps embed'},
+      {id:'cronos-umeda', type:'shopping', status:'confirmed', date:'2026-06-28', name:'CRONOS 梅田店', brands:'CRONOS 備選；若當天去梅田 / GRAND FRONT / 阪急男士館再順排', buy:'買什麼：CRONOS 男裝訓練服、T-shirt、短褲、日常運動風單品。', lat:34.70784157291719, lon:135.4956259763602, walk:'不建議從飯店步行；御堂筋線なんば→梅田後步行，粗估 20–30 分', addr:'〒530-0013 大阪市北区茶屋町15-22 Urban Terrace茶屋町 A棟3F', hours:'通常 11:00–20:00（CRONOS 官方店鋪頁；出發前需再查臨時店休）', source:'CRONOS 官方 shoplist / CRONOS 梅田店頁 / 官方 Google Maps embed'},
+      {id:'fitness-shop-links-umeda', type:'shopping', status:'confirmed', date:'未定', name:'Fitness Shop LINKS UMEDA 店', brands:'訓練用品 / 健身食品 / yoga wear / gear 綜合店；梅田備選，不是單一高級服飾品牌', buy:'買什麼：訓練腰帶、護具、補給品、訓練服 / yoga wear；如果去梅田可順看。', lat:34.70442813043364, lon:135.49406151531426, walk:'不建議從飯店步行；到梅田後在 LINKS UMEDA / ヨドバシ梅田 6F', addr:'大阪市北区大深町1-1 ヨドバシ梅田タワー6F', hours:'10:00–21:00（Fitness Shop 官方頁）', source:'Fitness Shop LINKS UMEDA 官方頁 / 官方 Google Maps embed'},
+      {id:'fitness-shop-abeno-harukas', type:'shopping', status:'confirmed', date:'未定', name:'Fitness Shop あべのハルカス店', brands:'訓練用品 / supplements / 格鬥用品 / supporter / wear；天王寺備選', buy:'買什麼：補給品、護具、訓練用品、訓練服；若去天王寺 / 阿倍野可順看。', lat:34.64515973044871, lon:135.51172241531276, walk:'不建議從飯店步行；若去天王寺 / 阿倍野可順排', addr:'大阪市阿倍野区阿倍野筋1-1-43 あべのハルカス近鉄本店ウィング館6F', hours:'10:00–20:00（Fitness Shop 官方頁）', source:'Fitness Shop あべのハルカス 官方頁 / 官方 Google Maps embed'},
+
+      {id:'apc-osaka-namba', type:'shopping', status:'confirmed', date:'未定', name:'A.P.C. OSAKA NAMBA / A.P.C. Osaka Namba - Osaka', brands:'A.P.C. 飯店附近首選；Men & women；なんばパークス2F', buy:'買什麼：A.P.C. 男裝 / 女裝、丹寧、基本款。若只逛一間 A.P.C.，先排這間。', lat:34.66167238, lon:135.50208981, walk:'A.P.C. 官方 Stockist 顯示距飯店約 0.5 km；步行粗估 8–14 分', addr:'大阪府大阪市浪速区難波中2-10-70 なんばパークス2F', hours:'11:00–21:00（Yahoo 搜尋摘要引用なんばパークス店鋪頁 / A.P.C. JP stockdata；出發前仍需查臨時休館）', source:'A.P.C. 官方 Store Locator / Stockist API；Yahoo 搜尋摘要'},
+      {id:'apc-surplus-osaka', type:'shopping', status:'needs_check', date:'未定', name:'A.P.C. Surplus - Osaka', brands:'A.P.C. 備選；surplus / outlet 取向；適合接堀江路線', buy:'買什麼：過季、折扣、surplus 類 A.P.C. 單品；若去 BIOTOP / LÝFT / CRONOS 可順排。', lat:34.67148568, lon:135.49692222, walk:'A.P.C. 官方 Stockist 顯示距飯店約 0.7 km；OSRM 步行路線約 0.85 km，粗估 11–13 分', addr:'大阪市西区南堀江1-14-2', hours:'營業時間未在可抓取官方頁確認；排入前需查 Google Maps / 官方 / 電話', source:'A.P.C. 官方 Store Locator / Stockist API'},
+      {id:'apc-osaka-umeda', type:'shopping', status:'needs_check', date:'梅田順路時', name:'A.P.C. Osaka Umeda - Osaka', brands:'A.P.C. 梅田備選；不算飯店附近，若去阪急男士館 / GRAND FRONT / LUCUA 再順排', buy:'買什麼：A.P.C. 男裝 / 女裝。地址與營業資訊出發前需以官方 Store Locator / Google Maps 當天確認。', lat:34.70067686, lon:135.49849280, walk:'A.P.C. 官方 Stockist 顯示距飯店約 3.8 km；不建議從難波步行', addr:'E~Ma 1F, 1-12-6 Umeda, Kita-ku, Osaka-shi', hours:'營業時間未在可抓取官方頁確認；Yahoo 搜尋出現不同 Umeda 地址摘要，需再確認', source:'A.P.C. 官方 Store Locator / Stockist API；Yahoo 搜尋摘要交叉檢查'},
+
+      {id:'maison-kitsune-osaka', type:'shopping', status:'confirmed', date:'未定', name:'Maison Kitsuné - Osaka', brands:'Maison Kitsuné 飯店附近首選；南堀江直營店', buy:'買什麼：Maison Kitsuné 男裝 / 女裝、狐狸 logo 基本款、丹寧與配件；可接 A.P.C. Surplus / BIOTOP / LÝFT / CRONOS 堀江線。', lat:34.669582, lon:135.494509, walk:'OSRM 步行路線約 0.75 km；正常步速粗估 10–12 分', addr:'1F 1-5-10 Minami Horie, Nishi-ku, Osaka 550-0015', hours:'每日 11:00–20:00（Maison Kitsuné 官方 store locator）', source:'Maison Kitsuné 官方 store locator'},
+      {id:'maison-kitsune-hankyu-mens-osaka', type:'shopping', status:'confirmed', date:'梅田順路時', name:"Maison Kitsuné - Hankyu Men's Osaka", brands:'Maison Kitsuné 梅田男裝備選；阪急メンズ大阪 5F', buy:'買什麼：Maison Kitsuné 男裝；去阪急男士館 / 梅田男裝路線時順排。', lat:34.703138, lon:135.499860, walk:'從飯店步行約 4.56 km，不建議步行；御堂筋線到梅田後順排', addr:'5F 7-10 Kakuda-cho, Kita-ku, Osaka 530-0017', hours:'平日 11:00–20:00；週末 10:00–20:00（Maison Kitsuné 官方 store locator）', source:'Maison Kitsuné 官方 store locator'},
+      {id:'maison-kitsune-hankyu-umeda-greenage', type:'shopping', status:'confirmed', date:'梅田順路時', name:'Maison Kitsuné - Hankyu Umeda Green Age', brands:'Maison Kitsuné 梅田備選；阪急うめだ本店 8F GREEN AGE', buy:'買什麼：Maison Kitsuné；去阪急百貨 / GREEN AGE 時順排。', lat:34.702819, lon:135.498532, walk:'從飯店步行約 4.8 km，不建議步行；到梅田後順排', addr:'Hankyu Umeda Main Store 8F GREEN AGE, 8-7 Kakudacho, Kita-ku, Osaka 〒530-8350', hours:'每日 10:00–20:00（Maison Kitsuné 官方 store locator）', source:'Maison Kitsuné 官方 store locator'},
+      {id:'cafe-kitsune-osaka', type:'food', status:'confirmed', date:'梅田順路時', name:'Café Kitsuné - Osaka', brands:'Café Kitsuné；Grand Green Osaka 咖啡備選，不是服飾店', buy:'吃什麼：咖啡 / 甜點；去 Grand Green Osaka / GRAND FRONT 時順排。', lat:34.704120, lon:135.492381, walk:'從飯店步行約 4.7 km，不建議步行；梅田區順排', addr:'Grand Green Osaka South Bldg. 1F, 5-54 Ofukacho, Kita-ku Osaka-shi 530-0011', hours:'每日 10:00–21:00（Maison Kitsuné 官方 store locator）', source:'Maison Kitsuné 官方 store locator'},
+
+      {id:'japan-blue-jeans-osaka', type:'shopping', status:'needs_check', date:'梅田順路時', name:'Japan Blue Jeans OSAKA', brands:'Japan Blue Jeans 官方大阪直營；難波飯店步行圈內未確認直營店，這間在梅田 / 茶屋町，適合接阪急メンズ大阪、GRAND FRONT、CRONOS 梅田路線', buy:'買什麼：JAPAN BLUE JEANS 男裝丹寧、定番 jeans、不同剪裁試穿。日文：JAPAN BLUE JEANSのメンズデニムを探しています。定番モデルとおすすめのシルエットを教えてください。裾上げは当日できますか？', lat:34.7063141, lon:135.499338, walk:'從大阪皇家經典飯店路線約 4.95 km；正常步行粗估 55–65 分，不建議步行；建議御堂筋線なんば→梅田後步行，粗估 20–30 分', addr:'大阪府大阪市北区茶屋町4-6', hours:'官方可抓取頁未列營業時間；出發前需查 Google Maps / 官方頁 / 電話 06-6718-7567', source:'JAPAN BLUE co.,ltd. 官方 BRAND/SHOP 頁 / 官方 Google Maps 連結'},
+
+      {id:'h-the-tokyo-osaka-ssstein', type:'shopping', status:'confirmed', date:'梅田順路時', name:'H THE TOKYO 大阪 / ssstein', brands:'H THE TOKYO 大阪 B1F；ssstein 官方 STOCKIST 掲載店。適合看 ssstein 男裝、新作、褲裝 / outer。', buy:'買什麼：ssstein メンズ、新作、パンツ、アウター。日文：sssteinの取り扱いはありますか？メンズの新作とパンツを見たいです。免税対応はできますか？', lat:34.7030031, lon:135.4997122, walk:'梅田區；從大阪皇家經典飯店不建議步行。建議御堂筋線なんば→梅田後步行，粗估 20–30 分', addr:'〒530-8350 大阪府大阪市北区角田町7-10 阪急メンズ大阪 B1F', hours:'平日 11:00–20:00；土日祝 10:00–20:00（THE TOKYO 店舗一覧 / Yahoo 摘要；臨時營業以阪急公告為準）', source:'THE TOKYO 店舗一覧 / ssstein STOCKIST / 阪急メンズ大阪 B1F brand page'},
+      {id:'hankyu-mens-osaka', type:'shopping', status:'confirmed', date:'未定', name:"Hankyu Men's Osaka / 阪急メンズ大阪", brands:'男裝百貨：TOMORROWLAND MEN / Theory Men / BEAMS 系 / 高級設計師品牌', lat:34.7031031, lon:135.4998122, walk:'梅田區；從難波需搭電車，不建議步行', addr:'大阪市北区角田町7-10', hours:'多數櫃位：平日 11:00–20:00；土日祝 10:00–20:00（實際以阪急男士館公告 / 各店頁為準）', source:'Yahoo 搜尋至阪急官方 access；TOMORROWLAND 阪急メンズ大阪店官方頁'},
+      {id:'grand-front-osaka', type:'shopping', status:'confirmed', date:'未定', name:'GRAND FRONT Osaka / グランフロント大阪', brands:'成熟選品 / 生活風格：ESTNATION、BEAMS、戶外機能與質感男裝', lat:34.7039643, lon:135.4947447, walk:'梅田區；從難波需搭電車，不建議步行', addr:'大阪站北側 / 大阪市北区大深町', hours:'物販多為 11:00–21:00；餐飲多為 11:00–23:00（各店與臨時營業以官方為準）', source:'GRAND FRONT Osaka 官方 information；ESTNATION Osaka 官方頁'},
+      {id:'amerikamura-shinsaibashi', type:'sight', status:'needs_check', date:'未定', name:'心齋橋 / 美國村 Amerikamura', brands:'潮流、古著、街頭選物；若找40歲俐落剪裁需挑店', lat:34.6720061, lon:135.4988014, walk:'從大阪皇家經典飯店約可步行到心齋橋區，但店家需逐店查', addr:'大阪市中央区西心斎橋一帶', hours:'街區無統一營業時間；加入具體店家前必查個別營業時間 / 公休日', source:'OSM/Nominatim geocode；大阪アメリカ村商店会官方會員頁'},
+
+      {id:'shiro-osaka-takashimaya', type:'shopping', status:'confirmed', date:'2026-06-27', name:'SHIRO 大阪タカシマヤ店', brands:'SHIRO', lat:34.6646286, lon:135.5017961, walk:'飯店步行約 3–5 分', addr:'大阪市中央区難波5-1-5 髙島屋大阪店 1F', hours:'10:00–20:00（官方店鋪頁；百貨臨時休館需再查）', source:'SHIRO 官方店鋪頁'},
+      {id:'sholayered-nambacity', type:'shopping', status:'confirmed', date:'2026-06-27', name:'SHOLAYERED なんば店', brands:'SHOLAYERED', lat:34.6639037, lon:135.5015067, walk:'飯店步行約 5–7 分', addr:'大阪市中央区難波5-1-60 なんばCITY本館 B1F', hours:'11:00–21:00（なんばCITY 店鋪頁 / SHOLAYERED 店舗一覧）', source:'なんばCITY / SHOLAYERED 官方店舗一覧'},
+      {id:'tomorrowland-osaka-takashimaya', type:'shopping', status:'confirmed', date:'2026-06-27', name:'TOMORROWLAND 大阪タカシマヤ店', brands:'KITOWA', lat:34.6646286, lon:135.5017961, walk:'飯店步行約 3–5 分', addr:'大阪市中央区難波5-1-5 髙島屋大阪店 3F', hours:'10:00–20:00；店休日不定休（TOMORROWLAND 官方）', source:'KITOWA 官方 SHOP LIST / TOMORROWLAND 官方店鋪頁'},
+      {id:'shopin-namba-marui', type:'shopping', status:'confirmed', date:'2026-06-27', name:'ショップイン なんばマルイ店', brands:'N organic', lat:34.6655694, lon:135.5010595, walk:'飯店步行約 2–4 分', addr:'大阪市中央区難波3-8-9 なんばマルイ B1F', hours:'11:00–20:00（shop in 官方店鋪頁）', source:'shop in 官方店鋪頁 / キレイエ'},
+      {id:'namba-loft', type:'shopping', status:'confirmed', date:'2026-06-27', name:'なんばロフト', brands:'N organic', lat:34.6616791, lon:135.5020843, walk:'飯店步行約 8–12 分', addr:'大阪市浪速区難波中2-10-70 なんばパークス 5F', hours:'11:00–21:00（Loft 官方店鋪頁）', source:'Loft 官方店鋪頁 / キレイエ'},
+      {id:'basic-accent-namba-parks', type:'shopping', status:'confirmed', date:'2026-06-27', name:'BASIC AND ACCENT なんばパークス', brands:'OSAJI', lat:34.6616791, lon:135.5020843, walk:'飯店步行約 8–12 分', addr:'大阪市浪速区難波中2-10-70 なんばパークス 5F', hours:'11:00–21:00（BASIC AND ACCENT 官方）', source:'BASIC AND ACCENT 官方 / キレイエ'},
+      {id:'biotop-osaka', type:'shopping', status:'confirmed', date:'2026-06-27', name:'BIOTOP OSAKA', brands:'APOTHEKE FRAGRANCE / KITOWA', lat:34.6709064, lon:135.4954254, walk:'飯店步行約 12–16 分', addr:'大阪市西区南堀江1-16-1', hours:'11:00–20:00（BIOTOP OSAKA；官方 2022 更新公告，出發前需再查臨時店休）', source:'APFR / KITOWA 官方 stockists；BIOTOP 官方公告'},
+      {id:'land-of-tomorrow-parco', type:'shopping', status:'confirmed', date:'2026-06-27', name:'LAND OF TOMORROW 心斎橋PARCO店', brands:'KITOWA', lat:34.6738654, lon:135.5009718, walk:'飯店步行約 13–17 分', addr:'大阪市中央区心斎橋筋1-8-3 心斎橋PARCO North 3F', hours:'物販 10:00–20:00（心斎橋PARCO 官方；短縮營業中）', source:'KITOWA 官方 SHOP LIST / 心斎橋PARCO 官方'},
+      {id:'study-showroom', type:'shopping', status:'confirmed', date:'2026-06-27', name:'STUDY SHOWROOM / 大阪農林会館', brands:'APOTHEKE FRAGRANCE', lat:34.676913, lon:135.5031308, walk:'飯店步行約 18–22 分', addr:'大阪市中央区南船場3-2-6 農林会館 409', hours:'平日 14:00–20:00、土日 12:00–20:00；火/水/木休（CC:OLORS 訪店頁，出發前需再查官方/IG）', source:'APFR 官方 Stockists / CC:OLORS'},
+      {id:'tale-cocoon', type:'shopping', status:'needs_check', date:'2026-06-27', name:'Tale Cocoon', brands:'çanoma', lat:34.6686, lon:135.4890, walk:'飯店步行約 16–22 分', addr:'大阪市浪速区幸町2-2-47', hours:'營業時間未在可抓取官方頁確認；排入前必查 Instagram / Google Maps', source:'çanoma 官方 Stores；座標為地址近似點'},
+
+      {id:'gym-goldsgym-shinsaibashi', type:'gym', status:'selected', date:'6/30–7/1 RITA 健身候選首選', name:"Gold's Gym 心斎橋大阪", brands:'外國人單次使用最穩妥：官方明寫 visitor 1回 5時間迄，非日本籍需出示護照或外國人登錄證明', buy:'帶什麼：護照、運動服、室內鞋、毛巾；官方可能影印證件。Visitor 1回 2,860円 / 5h。', lat:34.67245944741502, lon:135.49863170856358, walk:'從 RITA HOTEL NAMBA 路線約 2.94 km / 粗估步行 37 分；若 6/27 住梅田則需另以 TONES 地址重算', addr:'大阪市中央区西心斎橋1丁目6-14 BIG STEP 6F', hours:'ジム 月–土 7:00–23:30、日 9:00–22:00、祝 7:00–22:30；第2月曜休館，另有夏季/年末年始休館', source:'Gold’s Gym 心斎橋大阪 官方 membership / access 頁'},
+      {id:'gym-urbanfit24-namba', type:'gym', status:'needs_check', date:'6/30–7/1 RITA 最近候選', name:'URBAN FIT24 難波店', brands:'最近的 visitor 健身房；官方有ビジター利用，但海外旅客是否可只用護照需先確認', buy:'Visitor 2,530円，11:00–21:00；衣服上下/毛巾/鞋 visitor rental 990円。出發前問：台湾のパスポートだけでビジター利用できますか？', lat:34.6629759, lon:135.4970874, walk:'從 RITA HOTEL NAMBA 路線約 1.79 km / 粗估步行 22 分；若 6/27 住梅田則需另以 TONES 地址重算', addr:'大阪府大阪市浪速区元町1丁目11-16 ヴォンジョルノ難波 1階', hours:'Visitor 可用 11:00–21:00；スタッフ受付時間 11:00–21:00', source:'URBAN FIT24 難波店官方 price / access / FAQ 頁'},
+      {id:'gym-lifix-namba', type:'gym', status:'confirmed', date:'旅客友善備選', name:'LIFIX GYM 大阪難波 / 日本橋', brands:'旅客友善：官方英文文章寫 tourists / day pass / no membership required；GYYM 可買 120 分鐘 gym area', buy:'官方 visitor 1回 2,650円（9:30–21:00，最終受付20:00）；GYYM マシンジムエリア 120分 2,000pt，鞋/衣服/毛巾各 550円可租。', lat:34.6691694286166, lon:135.507610937766, walk:'從 RITA HOTEL NAMBA 路線約 3.44 km / 粗估步行 43 分；若 6/27 住梅田則需另以 TONES 地址重算', addr:'大阪府大阪市中央区島之内2-17-13', hours:'24h；visitor 9:30–21:00（最終受付 20:00）；GYYM 依預約時段', source:'LIFIX 官方頁 / 官方旅客文章 / GYYM program 頁'},
+      {id:'gym-koi-fit24', type:'gym', status:'confirmed', date:'外國旅客明確友善但較遠', name:'Koi-Fit24', brands:'明確寫 welcoming international visitors、tattoos OK、street shoes allowed、English support；但離飯店較遠', buy:'1-Day Visitor Pass 3,850円；需至少 24 小時前預約；需 LINE 做 ID/passport verification；same-day 不可。', lat:34.671501, lon:135.479863, walk:'從 RITA HOTEL NAMBA 路線約 3.43 km / 粗估步行 43 分；不列為最近首選', addr:'4-32-21 Minamihorie, Nishi-ku, Osaka 550-0015', hours:'24/7；visitor pass 需事前預約與身份驗證', source:'Koi-Fit24 visitor page'},
+
+      {id:'fit24-joto-furuichi', type:'gym', status:'needs_check', date:'不建議作為飯店附近選項', name:'FiT24 城東古市店', brands:'FiT24 官方大阪府店鋪；最近但距難波飯店仍偏遠', buy:'用途：若堅持 FiT24 可查 1day ticket / visitor 使用；不適合當作飯店附近步行健身房。', lat:34.707272, lon:135.560021, walk:'從 RITA HOTEL NAMBA 路線約 12.68 km / 159 分；不建議步行', addr:'大阪府大阪市城東区古市1丁目21-25', hours:'FiT24 店鋪通常 24h；1day ticket / 外國旅客使用條件需出發前確認', source:'FiT24 官方 shopinfo.xml / 店鋪頁'},
+      {id:'fit24-suita-kishibe', type:'gym', status:'needs_check', date:'不建議作為飯店附近選項', name:'FiT24 吹田岸部店', brands:'FiT24 官方大阪府店鋪；比城東古市更遠', buy:'用途：僅作官方大阪 FiT24 備查；不適合難波住宿附近健身。', lat:34.785971, lon:135.535902, walk:'從 RITA HOTEL NAMBA 路線約 18.47 km / 231 分；不建議步行', addr:'大阪府吹田市岸部北5丁目18-9 2F', hours:'FiT24 店鋪通常 24h；1day ticket / 外國旅客使用條件需出發前確認', source:'FiT24 官方 shopinfo.xml / 店鋪頁'}
+    ];
+
+    const map = L.map('map').setView([origin.lat, origin.lon], 15);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:19, attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+    function color(p){
+      if (p.status === 'selected') return '#111827';
+      if (p.status === 'excluded') return '#9e9e9e';
+      if (p.status === 'needs_check') return '#ff7f0e';
+      return {hotel:'#d62728', shopping:'#1f77b4', food:'#2ca02c', sight:'#9467bd', gym:'#17becf'}[p.type] || '#7f7f7f';
+    }
+    function gmapsRoute(lat, lon){ return `https://www.google.com/maps/dir/?api=1&origin=${origin.lat},${origin.lon}&destination=${lat},${lon}&travelmode=walking`; }
+    function gmapsSearch(name){ return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}`; }
+    const layerById = new Map();
+    const bounds = [];
+    for (const p of places) {
+      const marker = L.circleMarker([p.lat, p.lon], {radius:p.type==='hotel'?9:8, color:color(p), fillColor:color(p), fillOpacity:.88, weight:2}).addTo(map);
+      const warn = p.status === 'needs_check' ? '<p class="warn">⚠ 營業時間未確認 / 営業時間未確認，不可直接排固定時間</p>' : '';
+      const buy = p.buy ? `<p><b>買什麼 / 買うもの：</b>${p.buy}</p>` : '';
+      marker.bindPopup(`<div class="popup"><h3>${p.name}</h3><span class="tag">${p.date || '未定日期'}</span><span class="tag">${p.type}</span><p><b>內容 / 内容：</b>${p.brands}</p>${buy}<p><b>距離 / 距離：</b>${p.walk}</p><p><b>地址 / 住所：</b>${p.addr}</p><p><b>營業 / 営業：</b>${p.hours}</p>${warn}<p><b>來源 / 出典：</b>${p.source}</p><a target="_blank" href="${gmapsRoute(p.lat,p.lon)}">從難波住宿步行導航</a>　<a target="_blank" href="${gmapsSearch(p.name)}">Google Maps 搜尋</a></div>`);
+      layerById.set(p.id, {marker, place:p});
+      bounds.push([p.lat, p.lon]);
+    }
+    map.fitBounds(bounds, {padding:[40,40]});
+
+    function applyFilter(filter) {
+      for (const {marker, place} of layerById.values()) {
+        const show = filter === 'all' || place.type === filter || (filter === 'needs_check' && place.status === 'needs_check');
+        if (show) marker.addTo(map); else marker.removeFrom(map);
+      }
+    }
+    document.querySelectorAll('.filters button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyFilter(btn.dataset.filter);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -21,3 +21,11 @@ related: [00-Index.md]
 
 - `PKM-System/` — vault 規則與 PKM 系統文件
 - `AI Agents/` — agent 資源(prompt 模板、設定;尚未建立,需要時再開)
+
+<!-- HERMES-IMPORT-2026-07-04 -->
+## Hermes 匯入資源（2026-07-04）
+
+- `SEO/ahrefs-seo-tool-guide-2026.md`
+- `Creator-Economy/dankoe-creator-economy.md`
+- `讀書筆記/高效經理人手冊.md`
+- `讀書筆記/我們的美元，你們的問題.md`
