@@ -1,0 +1,1196 @@
+{
+  "last_update": "2025-11-02T01:01:48.786453",
+  "total_count": 146,
+  "source": {
+    "user_filled": 136,
+    "discussed": 10
+  },
+  "categories": {
+    "借款往來": [
+      {
+        "name": "合迪股份",
+        "nature": "租賃公司",
+        "account": "還款/借款及支付利息",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "台中商業",
+        "nature": "銀行往來",
+        "account": "還款/借款及支付利息",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "活存息　",
+        "nature": "利息收入",
+        "account": "7101-利息收入",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "源頭科技",
+        "nature": "借款/利息",
+        "account": "其他借款",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "日盛台駿",
+        "nature": "日盛租賃",
+        "account": "其他借款",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "坤硯投資",
+        "nature": "農地借款",
+        "account": "其他借款",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "企網轉帳-日盛租賃",
+        "nature": "借款還款",
+        "account": "2211-長期借款",
+        "project": "",
+        "note": "日盛租賃借款還款,對應日盛台駿借款入帳",
+        "source": "討論確認"
+      },
+      {
+        "name": "源頭科技-借款還款",
+        "nature": "借款還款",
+        "account": "2211-長期借款",
+        "project": "",
+        "note": "對應坤硯投資600萬借款",
+        "source": "討論確認"
+      },
+      {
+        "name": "源頭科技-利息支出",
+        "nature": "利息支出",
+        "account": "6208-金融費用",
+        "project": "",
+        "note": "借款利息60,045元",
+        "source": "討論確認"
+      }
+    ],
+    "股東往來": [
+      {
+        "name": "鹽館前投",
+        "nature": "股東往來",
+        "account": "3104-股東往來",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "代　　收",
+        "nature": "股東往來",
+        "account": "股東往來",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "陳信達　",
+        "nature": "股東往來",
+        "account": "股東往來",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "陳冠偉　",
+        "nature": "股東往來",
+        "account": "股東往來",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      }
+    ],
+    "關係企業": [
+      {
+        "name": "安上建設",
+        "nature": "關係企業",
+        "account": "關係企業往來",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      }
+    ],
+    "建案支出-拾壹間": [
+      {
+        "name": "風驛工程",
+        "nature": "臨時工",
+        "account": "5104-營建成本-人工費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "寬裕企業",
+        "nature": "清運廢棄物",
+        "account": "5105-營建成本-間接費用",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "協力建材",
+        "nature": "建材",
+        "account": "5102-營建成本-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "華品環保",
+        "nature": "清運廢棄物",
+        "account": "5105-營建成本-間接費用",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "中租汽車",
+        "nature": "租賃車",
+        "account": "租金支出",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "崇友實業",
+        "nature": "在建工程-電梯",
+        "account": "5101-營建成本-主體工程",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "余弘工程",
+        "nature": "人力仲介",
+        "account": "5104-營建成本-人工費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "富謙工程",
+        "nature": "工程廠商",
+        "account": "1511-在建工程-拾壹間-主體工程",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "塑豐實業",
+        "nature": "建材/設備商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "信興水電",
+        "nature": "水電工程",
+        "account": "1511-在建工程-拾壹間-主體工程",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "展昇營造",
+        "nature": "營造廠",
+        "account": "1511-在建工程-拾壹間-主體工程",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "瑀勝企業",
+        "nature": "水電工程",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "建友電機",
+        "nature": "電機設備",
+        "account": "1511-在建工程-拾壹間-主體工程",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "朝暮工程",
+        "nature": "工程廠商",
+        "account": "1511-在建工程-拾壹間-主體工程",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "俐麒企業",
+        "nature": "建材/設備商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "順靖企業",
+        "nature": "建材/設備商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "永泰五金",
+        "nature": "五金材料",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "冠寶工程",
+        "nature": "清運廢棄物",
+        "account": "5105-營建成本-間接費用",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "宏交電話",
+        "nature": "電機設備",
+        "account": "1511-在建工程-拾壹間-主體工程",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "安翊企業",
+        "nature": "建材/設備商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "毅和實業",
+        "nature": "水泥廠商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "春天磁磚",
+        "nature": "磁磚材料",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "榮晉玻璃",
+        "nature": "玻璃材料",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "億茂企業",
+        "nature": "建材/設備商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "達成鑫鋼",
+        "nature": "鋼筋/鋼材",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "班朋實業",
+        "nature": "電腦軟體",
+        "account": "軟體費用",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "鄭懿機電",
+        "nature": "機電設備",
+        "account": "1511-在建工程-拾壹間-主體工程",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "聯鉿測量",
+        "nature": "測量服務",
+        "account": "1511-在建工程-拾壹間-間接費用",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "將榮企業",
+        "nature": "建材/設備商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "泓富實業",
+        "nature": "建材/設備商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "村聖企業",
+        "nature": "建材/設備商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "柏加企業",
+        "nature": "建材/設備商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "安心企業",
+        "nature": "建材/設備商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "兆圓環境",
+        "nature": "清運/環保",
+        "account": "1511-在建工程-拾壹間-間接費用",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "大源鋁業",
+        "nature": "門窗",
+        "account": "1511-在建工程-拾壹間-主體工程",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "協立起重",
+        "nature": "機具租賃",
+        "account": "1511-在建工程-拾壹間-機具費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "曜陽瓦斯",
+        "nature": "瓦斯設備",
+        "account": "1511-在建工程-拾壹間-主體工程",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "隨形工程",
+        "nature": "工程廠商",
+        "account": "1511-在建工程-拾壹間-主體工程",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "順豐企業",
+        "nature": "建材/設備商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "賀泓企業",
+        "nature": "建材/設備商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "永興電機",
+        "nature": "電機設備",
+        "account": "1511-在建工程-拾壹間-主體工程",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "昇陽消防",
+        "nature": "消防設備",
+        "account": "1511-在建工程-拾壹間-主體工程",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "將成實業",
+        "nature": "建材/設備商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "川島地質",
+        "nature": "地質調查",
+        "account": "1511-在建工程-拾壹間-間接費用",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "協和建材",
+        "nature": "建材商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "拾壹間",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "永豐餘工",
+        "nature": "營造廠",
+        "account": "1511-在建工程-拾壹間-主體工程",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "羅家花園",
+        "nature": "樹作",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "協力　　",
+        "nature": "建材/設備商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "金協和建",
+        "nature": "建材/設備商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "立瑄有限",
+        "nature": "建材/設備商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "富天下營",
+        "nature": "工程廠商",
+        "account": "1511-在建工程-拾壹間-主體工程",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "興吉發科",
+        "nature": "建材/設備商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "昌鈺興業",
+        "nature": "建材/設備商",
+        "account": "1511-在建工程-拾壹間-材料費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "裕苗天然",
+        "nature": "瓦斯設備",
+        "account": "1511-在建工程-拾壹間-主體工程",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "臨工天下",
+        "nature": "工程廠商",
+        "account": "1511-在建工程-拾壹間-主體工程",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      }
+    ],
+    "建台街裝修": [
+      {
+        "name": "傅嬡屏　",
+        "nature": "建台街裝修",
+        "account": "建台街-室內裝修維修費及雜項購置",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "何兆勳　",
+        "nature": "建台街裝修",
+        "account": "建台街-室內裝修維修費及雜項購置",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "轉　　帳",
+        "nature": "建台街裝修",
+        "account": "建台街-室內裝修維修費及雜項購置",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "黃瑞英",
+        "nature": "建台街裝修",
+        "account": "建台街-室內裝修維修費及雜項購置",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "鍾鳳寶　",
+        "nature": "建台街裝修",
+        "account": "建台街-室內裝修維修費及雜項購置",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "蔡見德　",
+        "nature": "建台街裝修",
+        "account": "建台街-室內裝修維修費及雜項購置",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "陳家源　",
+        "nature": "建台街裝修",
+        "account": "建台街-室內裝修維修費及雜項購置",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "謝佩娟　",
+        "nature": "建台街裝修",
+        "account": "建台街-室內裝修維修費及雜項購置",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "李碩瀛　",
+        "nature": "建台街裝修",
+        "account": "建台街-室內裝修維修費及雜項購置",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "旭力鑫有",
+        "nature": "建台街裝修",
+        "account": "建台街-室內裝修維修費及雜項購置",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "金盛和股",
+        "nature": "建台街裝修",
+        "account": "建台街-室內裝修維修費及雜項購置",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "朕宏國際",
+        "nature": "工程廠商",
+        "account": "建台街-室內裝修維修費及雜項購置",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "陳美潔　",
+        "nature": "建台街裝修",
+        "account": "建台街-室內裝修維修費及雜項購置",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "幸韻電器",
+        "nature": "建材/設備商",
+        "account": "建台街-室內裝修維修費及雜項購置",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "陳品潔　",
+        "nature": "個人往來(支出)",
+        "account": "建台街-室內裝修維修費及雜項購置",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "劉淳安　",
+        "nature": "個人往來(支出)",
+        "account": "建台街-室內裝修維修費及雜項購置",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "林瑞珠　",
+        "nature": "個人往來(支出)",
+        "account": "建台街-室內裝修維修費及雜項購置",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "徐潤財　",
+        "nature": "個人往來(支出)",
+        "account": "建台街-室內裝修維修費及雜項購置",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      }
+    ],
+    "租賃支出": [
+      {
+        "name": "E24020016",
+        "nature": "租賃車",
+        "account": "租金支出",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "跨行轉帳",
+        "nature": "租賃車使用者付款",
+        "account": "暫收款",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "和運租車",
+        "nature": "租賃車",
+        "account": "6210-旅費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "依德國際",
+        "nature": "租賃車",
+        "account": "租金支出",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "B245VVAA26",
+        "nature": "租賃車費用",
+        "account": "6204-旅費",
+        "project": "",
+        "note": "業務用車,每月85,315元",
+        "source": "討論確認"
+      }
+    ],
+    "專業服務": [
+      {
+        "name": "洪建豪",
+        "nature": "雜支",
+        "account": "6211-專業服務費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "秉誠聯合",
+        "nature": "會計師費用",
+        "account": "6211-專業服務費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "金盛合股",
+        "nature": "雜支",
+        "account": "6211-專業服務費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "僑馥建築",
+        "nature": "信託公司費用",
+        "account": "6211-專業服務費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "普華商務",
+        "nature": "商務服務",
+        "account": "6211-專業服務費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "秧禾設計",
+        "nature": "設計費",
+        "account": "6211-專業服務費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "王明玉記",
+        "nature": "記帳費用",
+        "account": "6211-專業服務費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "林曉君　",
+        "nature": "代書",
+        "account": "6211-專業服務費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "葉富傑建",
+        "nature": "建築師費用",
+        "account": "6211-專業服務費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      }
+    ],
+    "廣告贊助": [
+      {
+        "name": "良友廣告",
+        "nature": "廣告費",
+        "account": "6108-廣告費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "敬業廣告",
+        "nature": "廣告費",
+        "account": "6108-廣告費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "大賞國際",
+        "nature": "贊助費",
+        "account": "其他費用",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "大與藝術",
+        "nature": "贊助費",
+        "account": "其他費用",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "藝術家雜",
+        "nature": "贊助費",
+        "account": "其他費用",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "南南穀有",
+        "nature": "廣告費用",
+        "account": "6210-廣告費",
+        "project": "",
+        "note": "",
+        "source": "討論確認"
+      },
+      {
+        "name": "小蝸科技",
+        "nature": "廣告費用",
+        "account": "6210-廣告費",
+        "project": "",
+        "note": "",
+        "source": "討論確認"
+      },
+      {
+        "name": "桃園市龜",
+        "nature": "贊助費用",
+        "account": "6219-其他費用",
+        "project": "",
+        "note": "",
+        "source": "討論確認"
+      }
+    ],
+    "其他": [
+      {
+        "name": "向上建設",
+        "nature": "他行活期存款",
+        "account": "待確認-他行活期存款",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "薪資整批",
+        "nature": "薪水",
+        "account": "6205-薪資支出",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "李佳旻　",
+        "nature": "租金",
+        "account": "6202-租金支出",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "李仁普",
+        "nature": "零用金",
+        "account": "1104-其他應收款",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "太子種苗",
+        "nature": "建材",
+        "account": "5102-營建成本-材料費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "鑫毅企業",
+        "nature": "水泥",
+        "account": "5102-營建成本-材料費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "勞保費",
+        "nature": "勞保費",
+        "account": "保險費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "勞退費",
+        "nature": "勞退費",
+        "account": "保險費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "現　　金",
+        "nature": "提領現金",
+        "account": "1101-庫存現金",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "健保費",
+        "nature": "健保費",
+        "account": "保險費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "長青人力",
+        "nature": "人力仲介",
+        "account": "5104-營建成本-人工費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "全民健康",
+        "nature": "健保費",
+        "account": "保險費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "憑證繳費",
+        "nature": "憑證費",
+        "account": "6219-其他費用",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "交通違規",
+        "nature": "罰款",
+        "account": "6219-其他費用",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "華美鮮花",
+        "nature": "鮮花",
+        "account": "6112-交際費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "國璽寶股",
+        "nature": "磁磚材料",
+        "account": "5102-營建成本-材料費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "蘇怡樺",
+        "nature": "零用金",
+        "account": "1104-其他應收款",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "黃建國　",
+        "nature": "測量服務",
+        "account": "勞務費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "戴偉哲",
+        "nature": "零用金",
+        "account": "1104-其他應收款",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "許志豪",
+        "nature": "零用金",
+        "account": "1104-其他應收款",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "彩藝得印",
+        "nature": "印刷費",
+        "account": "文書費用",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "張玉美　",
+        "nature": "其他費用",
+        "account": "其他費用",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "苗栗縣不",
+        "nature": "公會費用",
+        "account": "其他費用",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "鄭凱文　",
+        "nature": "泥作",
+        "account": "5104-營建成本-人工費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "謝婉琳",
+        "nature": "零用金",
+        "account": "1104-其他應收款",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "欣俊泰不",
+        "nature": "佣金支出",
+        "account": "佣金支出",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "登亮科技",
+        "nature": "軟體費用",
+        "account": "軟體費用",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "易得雲端",
+        "nature": "電話費",
+        "account": "電話費",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "工務金",
+        "nature": "零用金",
+        "account": "1104-其他應收款",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "景明化工",
+        "nature": "雜支",
+        "account": "其他費用",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "智慧城企",
+        "nature": "雜支",
+        "account": "其他費用",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "傅元威　",
+        "nature": "暫收款",
+        "account": "暫收款",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "立佳科技",
+        "nature": "軟體費用",
+        "account": "軟體費用",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "蘇怡樺　",
+        "nature": "零用金",
+        "account": "其他應收",
+        "project": "",
+        "note": "",
+        "source": "用戶填寫"
+      },
+      {
+        "name": "企網轉帳-代墊費用",
+        "nature": "代墊費用償還",
+        "account": "1131-其他應收款",
+        "project": "",
+        "note": "代墊給員工",
+        "source": "討論確認"
+      },
+      {
+        "name": "跨行退匯",
+        "nature": "退匯沖銷",
+        "account": "6208-金融費用",
+        "project": "",
+        "note": "資料輸入錯誤退匯,已配對沖銷,僅認列手續費209元",
+        "source": "討論確認"
+      },
+      {
+        "name": "零用金",
+        "nature": "提領零用金",
+        "account": "1131-其他應收款",
+        "project": "",
+        "note": "",
+        "source": "討論確認"
+      }
+    ]
+  }
+}

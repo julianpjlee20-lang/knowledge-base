@@ -1,0 +1,157 @@
+{
+  "source_vault": "C:\\Users\\user\\Documents\\Obsidian Vault",
+  "target_vault": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive",
+  "mode": "copy-only; source unchanged; excluded .git/.obsidian system folders",
+  "created_dirs": [
+    "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\03-Ideas\\Youtube",
+    "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\02-Projects\\建設公司會計",
+    "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\03-Ideas\\Prompts",
+    "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\05-Archive\\測試Git-舊Vault匯入",
+    "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\00-Inbox\\舊Vault匯入",
+    "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\04-Admin\\Migration-Logs"
+  ],
+  "copied_count": 19,
+  "skipped_count": 1,
+  "copied": [
+    {
+      "type": "file",
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\Youtube\\Claude Code Setup Documentation.md",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\03-Ideas\\Youtube\\Claude Code Setup Documentation.md",
+      "status": "new",
+      "bytes": 12288
+    },
+    {
+      "type": "file",
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\Youtube\\Claude Code YOLO Mode Setup Guide.md",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\03-Ideas\\Youtube\\Claude Code YOLO Mode Setup Guide.md",
+      "status": "new",
+      "bytes": 8013
+    },
+    {
+      "type": "file",
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\Youtube\\claude-code-fullstack-manual.md",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\03-Ideas\\Youtube\\claude-code-fullstack-manual.md",
+      "status": "new",
+      "bytes": 9397
+    },
+    {
+      "type": "file",
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\Youtube\\How Tiny Experiments Change Everything.md",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\03-Ideas\\Youtube\\How Tiny Experiments Change Everything.md",
+      "status": "new",
+      "bytes": 16682
+    },
+    {
+      "type": "file",
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\YouTube Video - Affordable Menswear Pieces.md",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\03-Ideas\\Youtube\\YouTube Video - Affordable Menswear Pieces.md",
+      "status": "new",
+      "bytes": 4944
+    },
+    {
+      "type": "file",
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\建設公司會計\\台灣營造業會計科目表.md",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\02-Projects\\建設公司會計\\台灣營造業會計科目表.md",
+      "status": "new",
+      "bytes": 22683
+    },
+    {
+      "type": "file",
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\建設公司會計\\向上建設交易對象一覽.md",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\02-Projects\\建設公司會計\\向上建設交易對象一覽.md",
+      "status": "new",
+      "bytes": 23853
+    },
+    {
+      "type": "file",
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\建設公司會計\\建設公司交易對象知識庫_最終版.md",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\02-Projects\\建設公司會計\\建設公司交易對象知識庫_最終版.md",
+      "status": "new",
+      "bytes": 33785
+    },
+    {
+      "type": "file",
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\建設公司會計\\建設公司會計資料庫設計初稿.md",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\02-Projects\\建設公司會計\\建設公司會計資料庫設計初稿.md",
+      "status": "new",
+      "bytes": 15266
+    },
+    {
+      "type": "file",
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\會計資料庫設計想法.md",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\02-Projects\\建設公司會計\\會計資料庫設計想法.md",
+      "status": "new",
+      "bytes": 147
+    },
+    {
+      "type": "file",
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\交易對象知識庫_完整版.json",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\02-Projects\\建設公司會計\\交易對象知識庫_完整版.json",
+      "status": "new",
+      "bytes": 31642
+    },
+    {
+      "type": "file",
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\新增功能.md",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\02-Projects\\建設公司會計\\新增功能.md",
+      "status": "new",
+      "bytes": 204
+    },
+    {
+      "type": "file",
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\Agent Team Prompt Template.md",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\03-Ideas\\Prompts\\Agent Team Prompt Template.md",
+      "status": "new",
+      "bytes": 23556
+    },
+    {
+      "type": "file",
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\READY-TO-USE-PROMPT.md",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\03-Ideas\\Prompts\\READY-TO-USE-PROMPT.md",
+      "status": "new",
+      "bytes": 10388
+    },
+    {
+      "type": "file",
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\測試Git\\Untitled.md",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\05-Archive\\測試Git-舊Vault匯入\\Untitled.md",
+      "status": "new",
+      "bytes": 133
+    },
+    {
+      "type": "file",
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\Untitled.md",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\00-Inbox\\舊Vault匯入\\Untitled.md",
+      "status": "new",
+      "bytes": 0
+    },
+    {
+      "type": "file",
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\Untitled.base",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\00-Inbox\\舊Vault匯入\\Untitled.base",
+      "status": "new",
+      "bytes": 39
+    },
+    {
+      "type": "file",
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\Untitled 1.base",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\00-Inbox\\舊Vault匯入\\Untitled 1.base",
+      "status": "new",
+      "bytes": 39
+    },
+    {
+      "type": "file",
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\Welcome.md",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\00-Inbox\\舊Vault匯入\\Welcome.md",
+      "status": "new",
+      "bytes": 203
+    }
+  ],
+  "skipped": [
+    {
+      "source": "C:\\Users\\user\\Documents\\Obsidian Vault\\Obsidian",
+      "target": "C:\\Users\\user\\OneDrive\\SecondBrain-Onedrive\\05-Archive\\Obsidian-舊Vault匯入",
+      "reason": "only nested .git/system files; not copied"
+    }
+  ]
+}

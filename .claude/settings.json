@@ -1,0 +1,12 @@
+{
+  "hooks": {
+    "session_start": {
+      "command": "python",
+      "args": [".claude/scripts/on_start.py"]
+    },
+    "session_end": {
+      "command": "python",
+      "args": [".claude/scripts/on_end.py"]
+    }
+  }
+}

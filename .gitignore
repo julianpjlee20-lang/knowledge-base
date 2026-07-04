@@ -1,0 +1,16 @@
+# Obsidian / local system files
+.obsidian/
+.trash/
+.DS_Store
+Thumbs.db
+
+# Generated graph/cache outputs (moved under Archives/Agent Logs)
+graphify-out/
+04-Archives/Agent Logs/graphify-out/
+
+# Inbox is private / unprocessed by default
+00-Inbox/
+
+# Sensitive local connection artifacts (moved from 04-Admin to 02-Areas)
+02-Areas/*WhatsApp_QR_Code.txt
+02-Areas/*Gateway連線資訊.txt
