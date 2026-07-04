@@ -14,6 +14,21 @@ related: [AGENTS.md]
 This Obsidian vault follows strict PARA.
 The imported `AGENTS.md` rules are mandatory for all Claude Code work in this vault.
 
+## Cross-Agent Memory Source of Truth
+
+This repository is Andy's knowledge-base / Obsidian vault, not the durable memory repo.
+
+Before making durable assumptions about Andy, read:
+
+- `/opt/data/hermes-memory/AGENTS.md`
+- `/opt/data/hermes-memory/MEMORY.md`
+
+GitHub source of truth:
+
+- `https://github.com/julianpjlee20-lang/hermes-memory`
+
+When updating durable user preferences, identity, agent behavior, or environment facts, update and push the `hermes-memory` repo. Do not create a separate Claude-only memory inside this knowledge-base repo.
+
 ## Core Non-Negotiables (redundant safety, in case the import fails)
 
 - Do not create new top-level folders.

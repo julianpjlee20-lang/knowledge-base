@@ -9,6 +9,21 @@ related: [CLAUDE.md]
 
 # Agent Rules for This Obsidian Vault
 
+## Cross-Agent Memory Source of Truth
+
+This repository is Andy's knowledge-base / Obsidian vault. It is **not** the durable cross-agent memory repo.
+
+Durable user preferences, identity, agent behavior rules, and environment facts must sync with the GitHub-backed memory repo:
+
+- GitHub: `https://github.com/julianpjlee20-lang/hermes-memory`
+- Local path: `/opt/data/hermes-memory`
+- Operating rules: `/opt/data/hermes-memory/AGENTS.md`
+- Durable memory: `/opt/data/hermes-memory/MEMORY.md`
+
+Before making durable assumptions about Andy, read the memory repo's `AGENTS.md` and `MEMORY.md`.
+
+When updating durable user/agent/identity preferences, update the memory repo and push it to GitHub. Do not create a separate private memory inside this knowledge-base repo.
+
 ## PARA-CORE v1
 
 This vault follows strict PARA.
