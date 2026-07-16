@@ -53,4 +53,5 @@ Claude Code 由 root [[CLAUDE]] import `AGENTS.md`。
 - `03-Resources/Creator-Economy/dankoe-creator-economy.md` — Dan Koe 多重興趣與創作者經濟筆記
 - `03-Resources/讀書筆記/高效經理人手冊.md` — 高效經理人手冊讀書筆記
 - `03-Resources/讀書筆記/我們的美元，你們的問題.md` — 美元霸權與貨幣金融筆記
+- `03-Resources/讀書筆記/2026-07-16_Dan-Martell-推薦四本書.md` — Dan Martell 影片提及的四本管理、系統思維與心態書籍
 - `04-Archives/Legacy-Hermes-Wiki/` — 舊版 Hermes Wiki 的 index/log/schema 備份

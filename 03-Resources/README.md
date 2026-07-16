@@ -1,6 +1,6 @@
 ---
 created: 2026-07-04
-updated: 2026-07-04
+updated: 2026-07-16
 type: resource
 status: reference
 tags: [PKM-System, index, PARA]
@@ -28,3 +28,7 @@ source: []
 - [[PKM-System/Dropbox Processing Workflow]]
 - [[PKM-System/Templates/Standard Note Template]]
 - [[PKM-System/Templates/Vendor Note Template]]
+
+## 新增資源
+
+- `讀書筆記/2026-07-16_Dan-Martell-推薦四本書.md` — Dan Martell 影片提及的四本管理、系統思維與心態書籍
