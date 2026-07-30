@@ -55,3 +55,10 @@ Claude Code 由 root [[CLAUDE]] import `AGENTS.md`。
 - `03-Resources/讀書筆記/我們的美元，你們的問題.md` — 美元霸權與貨幣金融筆記
 - `03-Resources/讀書筆記/2026-07-16_Dan-Martell-推薦四本書.md` — Dan Martell 影片提及的四本管理、系統思維與心態書籍
 - `04-Archives/Legacy-Hermes-Wiki/` — 舊版 Hermes Wiki 的 index/log/schema 備份
+- `00-Inbox/青安3.0桃竹苗符合資格人數推估_20260724.md` — 青安 3.0 條件 + 桃竹苗符合人數兩種推估法（條件推估 ≈13 萬 / 房市份額回推 ≈2.7–3.0 萬戶累計）
+- `03-Resources/2025-12-23-How-to-fix-your-entire-life-in-1-day-Dan-Koe-翻譯.md` — Dan Koe《How to fix your entire life in 1 day》全文中文翻譯：身分優先改變、1 天協議、遊戲化人生設計
+
+## Total pages
+
+<!-- HERMES-PAGE-COUNT — auto-updated by Hermes on new page commits -->
+- 2026-07-29: 1 new page added (Dan Koe 1-day protocol 中文翻譯) → running total tracked in git log.
