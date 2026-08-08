@@ -58,9 +58,11 @@ Claude Code 由 root [[CLAUDE]] import `AGENTS.md`。
 - `00-Inbox/青安3.0桃竹苗符合資格人數推估_20260724.md` — 青安 3.0 條件 + 桃竹苗符合人數兩種推估法（條件推估 ≈13 萬 / 房市份額回推 ≈2.7–3.0 萬戶累計）
 - `03-Resources/2025-12-23-How-to-fix-your-entire-life-in-1-day-Dan-Koe-翻譯.md` — Dan Koe《How to fix your entire life in 1 day》全文中文翻譯：身分優先改變、1 天協議、遊戲化人生設計
 - `03-Resources/讀書筆記/2026-08-08_Michael-Mauboussin推薦的12本投資書.md` — Acquirer's Multiple 整理的 Mauboussin 12 本書書單，Amazon + Open Library 雙源驗證 ISBN/出版資訊
+- `03-Resources/讀書筆記/2026-08-08_Acquirers-Multiple-超級投資人書單全集-204本.md` — 12 位超級投資人 (Buffett/Munger/Klarman/Greenblatt/Taleb/Mauboussin/Ackman/Pabrai/Burry/Dimon/Bogle/Loeb/Watsa) + Acquirer's Multiple Top 50 + Columbia Reading List 共 204 本書的完整書單，含 Amazon ISBN 與學習路徑
 
 ## Total pages
 
 <!-- HERMES-PAGE-COUNT — auto-updated by Hermes on new page commits -->
 - 2026-07-29: 1 new page added (Dan Koe 1-day protocol 中文翻譯) → running total tracked in git log.
 - 2026-08-08: 1 new page added (Mauboussin 12-book list w/ ISBN/Amazon/OL metadata) → running total tracked in git log.
+- 2026-08-08: 1 new page added (Acquirer's Multiple 204-book superinvestor reading lists) → running total tracked in git log.
